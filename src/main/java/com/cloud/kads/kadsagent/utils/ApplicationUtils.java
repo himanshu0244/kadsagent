@@ -63,12 +63,13 @@ public class ApplicationUtils {
 	public static ResponseHeaderDTO prepareErroResponse(RuntimeException ex) {
 
 		ResponseHeaderDTO responseHeaderDTO = prepareErrorResponseHeaderObject();
-
 		ErrorDTO errorDTO = new ErrorDTO();
-		errorDTO.setErrorCode(((AppRuntimeException) ex).getCode());
-		errorDTO.setErrorMessages(((AppRuntimeException) ex).getErrorMessage());
-		errorDTO.setErrorType(((AppRuntimeException) ex).getHttpStatus().name());
-		responseHeaderDTO.setError(errorDTO);
+		if (ex instanceof AppRuntimeException) {
+			errorDTO.setErrorCode(((AppRuntimeException) ex).getCode());
+			errorDTO.setErrorMessages(((AppRuntimeException) ex).getErrorMessage());
+			errorDTO.setErrorType(((AppRuntimeException) ex).getHttpStatus().name());
+			responseHeaderDTO.setError(errorDTO);
+		}
 		return responseHeaderDTO;
 
 	}

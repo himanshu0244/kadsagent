@@ -14,60 +14,39 @@ public class CommonConstants {
 	public static final String MODIFIED_BY = "MODIFIED_BY";
 
 	// Bank Account Entity
-	public static final String ACCOUNT = "ACCOUNT";
-	public static final String ACCOUNT_NAME = "ACCOUNT_NAME";
+	public static final String BANK_DETAILS = "BANK_DETAILS";
+	public static final String BANK_DETAILS_SEQ = "BANK_DETAILS_SEQ";
+	public static final String BANK_NAME = "BANK_NAME";
+	public static final String ACCOUNT_NUMBER = "ACCOUNT_NUMBER";
+	public static final String NAME_ON_ACCOUNT = "NAME_ON_ACCOUNT";
 	public static final String SHOW_ACCOUNT = "SHOW_ACCOUNT";
 
-	// Admin Entity
-	public static final String ADMIN = "ADMIN";
-	public static final String USERNAME = "USERNAME";
-	public static final String PASSWORD = "PASSWORD";
-
-	// Asset Entity
-	public static final String ASSET = "ASSET";
-	public static final String ASSET_NUMBER = "ASSET_NUMBER";
-	public static final String ASSET_TYPE = "ASSET_TYPE";
-	public static final String MOVEMENT_ID = "MOVEMENT_ID";
-
-	// Escort entity
-	public static final String ESCORT = "ESCORT";
-	public static final String EMP_ID = "EMP_ID";
-	public static final String FIRST_NAME = "FIRST_NAME";
-	public static final String LAST_NAME = "LAST_NAME";
-	public static final String LOCATION = "LOCATION";
-	public static final String LOCATION_NAME = "LOCATION_NAME";
-
-	// IT ASSET entity
-	public static final String ITASSET = "ITASSET";
-	public static final String MOVEMENT_TYPE = "EMP_ID";
-	public static final String MOVEMENT_DATE = "FIRST_NAME";
-	public static final String IMAGE = "IMAGE";
-	public static final String DESCRIPTION = "DESCRIPTION";
-	public static final String NON_ITASSET = "NON_ITASSET";
-	public static final String SECURITY = "SECURITY";
-
-	// VISITOR
-	public static final String TENANT = "VISITOR";
-	public static final String TENANT_SEQ = "VISITOR_SEQ";
-	public static final String TENANT_ID = "VISITOR_ID";
-	public static final String VISITOR_TYPE = "VISITOR_TYPE";
+	// Tenant Entity
+	public static final String TENANT = "TENANT";
+	public static final String TENANT_SEQ = "TENANT_SEQ";
+	public static final String EMAIL = "EMAIL";
 	public static final String CONTACT_NUMBER = "CONTACT_NUMBER";
-	public static final String PURPOSE = "PURPOSE";
-	public static final String ESCORT_EMP_ID = "ESCORT_EMP_ID";
-	public static final String LAPTOP_SERIAL_NUMBER = "LAPTOP_SERIAL_NUMBER";
-	public static final String REMARKS = "REMARKS";
-	public static final String IN_TIME = "IN_TIME";
-	public static final String OUT_TIME = "OUT_TIME";
-	public static final String ODC_LOCATION = "ODC_LOCATION";
-	public static final String PROXY = "PROXY";
-	public static final String EMPLOYEE_TYPE = "EMPLOYEE_TYPE";
 	public static final String STATUS = "STATUS";
+	public static final String IMAGE = "IMAGE";
+	public static final String FIRST_NAME = "FIRST_NAME";
+	public static final String MIDDLE_NAME = "MIDDLE_NAME";
+	public static final String LAST_NAME = "LAST_NAME";
+	public static final String LANDLORD_ID = "LANDLORD_ID";
+	public static final String BANK_ID = "BANK_ID";
+
+	// Landlord Entity
+	public static final String LANDLORD_DETAILS = "LANDLORD_DETAILS";
+	public static final String LANDLORD_DETAILS_SEQ = "LANDLORD_DETAILS_SEQ";
+	public static final String TITLE = "TITLE";
+	public static final String DOB = "DOB";
+	public static final String GENDER = "GENDER";
 
 	public static final String ADDED = "ADDED";
+	public static final String UPDATED = "UPDATED";
 	public static final String DELETED = "DELETED";
 
 	// URL constants
 	public static final String AGENT_BASE_URL = "/agent";
 	public static final String API_VERSION = "/v1";
-	
+
 }

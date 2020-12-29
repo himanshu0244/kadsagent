@@ -1,30 +1,34 @@
 package com.cloud.kads.kadsagent.dto;
 
 public enum GeneralErrorEnum {
-  
-  SUCCESS(100, "SUCCESS", "Success"), FAILED(101, "FAILED", "Failed"),
-  UNKNOWN(0, "UNKNOWN", "Unknown");
 
-  private int code;
-  private String errorCode;
-  private String errorMessage;
+	SUCCESS(100, "SUCCESS", "Success"), FAILED(101, "FAILED", "Failed"),
+	ERR_INVALID_REQUEST(102, "ERR_INVALID_REQUEST", "Invalid Request"),
+	ERR_MISSING_TENANT(103, "ERR_MISSING_TENANT", "tenant not found"),
+	ERR_ALREADY_EXISTING_TENANT(104, "ERR_ALREADY_EXISTING_TENANT", "tenant already exists"),
 
-  GeneralErrorEnum(int code, String errorCode, String errorMessage) {
-    this.code = code;
-    this.errorCode = errorCode;
-    this.errorMessage = errorMessage;
-  }
+	UNKNOWN(0, "UNKNOWN", "Unknown");
 
-  public int getCode() {
-    return code;
-  }
+	private int code;
+	private String errorCode;
+	private String errorMessage;
 
-  public String getErrorCode() {
-    return errorCode;
-  }
+	GeneralErrorEnum(int code, String errorCode, String errorMessage) {
+		this.code = code;
+		this.errorCode = errorCode;
+		this.errorMessage = errorMessage;
+	}
 
-  public String getErrorMessage() {
-    return errorMessage;
-  }
+	public int getCode() {
+		return code;
+	}
+
+	public String getErrorCode() {
+		return errorCode;
+	}
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
 
 }

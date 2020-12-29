@@ -10,12 +10,9 @@ import com.cloud.kads.kadsagent.domain.Tenant;
 
 public interface TenantRepository extends CrudRepository<Tenant, Long> {
 
-	@Query("Select tenant from Tenant tenant where tenant.activeInd=1 order by createDate desc ")
+	@Query("Select tenant from Tenant tenant where tenant.activeInd=1 order by createDate desc")
 	Optional<List<Tenant>> fetchAllTenants();
-	
-	@Query("Select tenant from Tenant tenant where tenant.visitorEmpId = :visitorEmpId and visitor.activeInd=1 ")
-	Optional<Tenant> findByEmployeeId(String visitorEmpId);
 
-	
-	
+	@Query("Select tenant from Tenant tenant where tenant.email= :email and tenant.activeInd=1")
+	Optional<Tenant> findByEmailId(String email);
 }

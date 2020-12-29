@@ -3,7 +3,6 @@ package com.cloud.kads.kadsagent.dto;
 import java.util.List;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -20,25 +19,26 @@ import lombok.ToString;
 @JsonInclude(Include.NON_NULL)
 @EqualsAndHashCode
 @ToString
-public class TenantDTO {
+public class LandlordDTO {
 
 	private Long id;
 
 	private byte[] image;
 
 	@NotBlank(message = "email ID is mandatory")
-	@NotNull
 	private String email;
 
-	@NotBlank(message = "first name is mandatory")
+	private String title;
+
 	private String firstName;
 
-	@NotBlank(message = "last name is mandatory")
+	private String middleName;
+
 	private String lastName;
 
+	private String dob;
+
+	private String gender;
+
 	private List<Long> contactNumber;
-
-	private LandlordDTO landlord;
-
-	private BankDTO bankDetails;
 }
