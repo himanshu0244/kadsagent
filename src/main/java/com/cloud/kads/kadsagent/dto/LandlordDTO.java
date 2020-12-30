@@ -2,8 +2,6 @@ package com.cloud.kads.kadsagent.dto;
 
 import java.util.List;
 
-import javax.validation.constraints.NotBlank;
-
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
@@ -25,7 +23,6 @@ public class LandlordDTO {
 
 	private byte[] image;
 
-	@NotBlank(message = "email ID is mandatory")
 	private String email;
 
 	private String title;

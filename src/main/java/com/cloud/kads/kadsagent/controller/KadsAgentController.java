@@ -24,6 +24,7 @@ import com.cloud.kads.kadsagent.dto.TenantResponseDTO;
 import com.cloud.kads.kadsagent.dto.TenantResponseResponseBody;
 import com.cloud.kads.kadsagent.service.TenantServiceImpl;
 import com.cloud.kads.kadsagent.utils.ApplicationUtils;
+import com.cloud.kads.kadsagent.utils.ValidationUtils;
 
 /**
  * application Controller
@@ -57,15 +58,16 @@ public class KadsAgentController {
 	@PostMapping
 	public TenantResponseDTO createTenant(@Valid @RequestBody TenantRequestDTO tenantRequestDTO) {
 		long startTime = System.currentTimeMillis();
-
+		ValidationUtils.validate(tenantRequestDTO);
 		TenantDTO tenant = tenantService.createTenant(tenantRequestDTO);
 		return prepareTenantResponse(Arrays.asList(tenant), startTime);
 	}
 
 	@PutMapping
-	public TenantResponseDTO updateTenant(@Valid @RequestBody TenantRequestDTO tenantRequestDTO) {
+	public TenantResponseDTO updateTenant(@Valid @RequestBody TenantRequestDTO updateTenantRequestDTO) {
 		long startTime = System.currentTimeMillis();
-		TenantDTO tenant = tenantService.updateTenant(tenantRequestDTO);
+		ValidationUtils.validate(updateTenantRequestDTO);
+		TenantDTO tenant = tenantService.updateTenant(updateTenantRequestDTO);
 		return prepareTenantResponse(Arrays.asList(tenant), startTime);
 	}
 
