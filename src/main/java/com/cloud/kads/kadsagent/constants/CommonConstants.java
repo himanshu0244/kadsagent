@@ -48,5 +48,6 @@ public class CommonConstants {
 	// URL constants
 	public static final String AGENT_BASE_URL = "/agent";
 	public static final String API_VERSION = "/v1";
+	public static final String MESSAGE = "message";
 
 }

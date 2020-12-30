@@ -15,19 +15,18 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.cloud.kads.kadsagent.constants.CommonConstants;
 import com.cloud.kads.kadsagent.dto.ResponseHeaderDTO;
 import com.cloud.kads.kadsagent.utils.ApplicationUtils;
 
 @ControllerAdvice
 public class AppRuntimeExceptionHandler extends ResponseEntityExceptionHandler {
 
-	private static final String MESSAGE = "message";
-
 	@ExceptionHandler(value = { IllegalArgumentException.class, IllegalStateException.class })
 	protected ResponseEntity<Object> handleConflict(RuntimeException ex, WebRequest request) {
 
 		Map<String, String> errors = new HashMap<>();
-		errors.put(MESSAGE, ex.getMessage());
+		errors.put(CommonConstants.MESSAGE, ex.getMessage());
 		return handleExceptionInternal(ex, errors, new HttpHeaders(), HttpStatus.CONFLICT, request);
 	}
 
@@ -35,7 +34,7 @@ public class AppRuntimeExceptionHandler extends ResponseEntityExceptionHandler {
 	protected ResponseEntity<Object> handleDataAccessException(RuntimeException ex, WebRequest request) {
 
 		Map<String, String> errors = new HashMap<>();
-		errors.put(MESSAGE, ex.getMessage());
+		errors.put(CommonConstants.MESSAGE, ex.getMessage());
 		return handleExceptionInternal(ex, errors, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR, request);
 	}
 
@@ -53,7 +52,7 @@ public class AppRuntimeExceptionHandler extends ResponseEntityExceptionHandler {
 			WebRequest request) {
 
 		Map<String, String> errors = new HashMap<>();
-		errors.put(MESSAGE, ex.getMessage());
+		errors.put(CommonConstants.MESSAGE, ex.getMessage());
 
 		return handleExceptionInternal(ex, errors, new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
 	}
